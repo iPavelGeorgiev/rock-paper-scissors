@@ -1,0 +1,65 @@
+@use '../abstracts/colors';
+@use '../abstracts/breakpoints' as *;
+@use 'sass:color';
+
+.visually-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@mixin create-box-shadow($color) {
+  box-shadow: inset 0 0.8rem hsl(226, 23%, 78%), 0 0.8rem 0 darken($color, 10%);
+
+  @include breakpoint('max', 'xl') {
+    box-shadow: inset 0 0.7rem hsl(226, 23%, 78%), 0 0.7rem 0 darken($color, 10%);
+  }
+
+  @include breakpoint('max', 'md') {
+    box-shadow: inset 0 0.5rem hsl(226, 23%, 78%), 0 0.5rem 0 darken($color, 10%);
+  }
+
+  @include breakpoint('max', 'sm') {
+    box-shadow: inset 0 0.4rem hsl(226, 23%, 78%), 0 0.4rem 0 darken($color, 10%);
+  }
+}
+
+.rock {
+  @include create-box-shadow(colors.$rock-outline);
+  border-color: colors.$rock-outline;
+  background-image: url('../img/icon-rock.svg');
+}
+
+.paper {
+  @include create-box-shadow(colors.$paper-outline);
+  border-color: colors.$paper-outline;
+  background-image: url('../img/icon-paper.svg');
+}
+
+.scissors {
+  @include create-box-shadow(colors.$scissors-outline);
+  border-color: colors.$scissors-outline;
+  background-image: url('../img/icon-scissors.svg');
+}
+
+.lizard {
+  @include create-box-shadow(colors.$lizard-outline);
+  border-color: colors.$lizard-outline;
+  background-image: url('../img/icon-lizard.svg');
+}
+
+.spock {
+  @include create-box-shadow(colors.$spock-outline);
+  border-color: colors.$spock-outline;
+  background-image: url('../img/icon-spock.svg');
+}
