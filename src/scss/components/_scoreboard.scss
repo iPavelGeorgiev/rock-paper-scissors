@@ -1,0 +1,115 @@
+@use '../abstracts/colors';
+@use '../abstracts/variables' as vars;
+@use '../abstracts/breakpoints' as *;
+
+.scoreboard {
+  padding: 1.7rem 2.4rem;
+  border: 0.2rem solid colors.$main-outline;
+  border-radius: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include breakpoint('max', 'sm') {
+    padding: 1.1rem 1.6rem;
+    margin-top: 3rem;
+    border-radius: 1rem;
+  }
+
+  & .logo-easy {
+    height: 10.5rem;
+    width: 17.2rem;
+
+    @include breakpoint('max', 'xl') {
+      height: 9.9rem;
+      width: 16.2rem;
+    }
+
+    @include breakpoint('max', 'md') {
+      height: 7.33rem;
+      width: 12rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      height: 5.5rem;
+      width: 9rem;
+    }
+  }
+
+  & .logo-hard {
+    height: 12.2rem;
+    width: 12.3rem;
+
+    @include breakpoint('max', 'xl') {
+      height: 11.4rem;
+      width: 11.5rem;
+    }
+
+    @include breakpoint('max', 'md') {
+      height: 8.92rem;
+      width: 9rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      height: 7.14rem;
+      width: 7.2rem;
+    }
+  }
+}
+
+.score {
+  background-color: hsl(0, 0%, 100%);
+  text-align: center;
+  padding: 1.6rem 5rem;
+  border-radius: 0.6rem;
+  box-shadow: 0px 3px 3px hsla(0, 0%, 0%, 0.2);
+
+  @include breakpoint('max', 'xl') {
+    padding: 1.5rem 4.7rem;
+  }
+
+  @include breakpoint('max', 'md') {
+    padding: 1.2rem 4rem;
+  }
+
+  @include breakpoint('max', 'sm') {
+    padding: 1.1rem 2.1rem;
+  }
+
+  &-title {
+    color: colors.$score-text;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+
+    @include breakpoint('max', 'xl') {
+      font-size: 1.7rem;
+    }
+
+    @include breakpoint('max', 'md') {
+      font-size: 1.4rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      font-size: 1.2rem;
+    }
+  }
+
+  &-total {
+    color: colors.$dark-text;
+    font-size: 7rem;
+    font-weight: vars.$font-weight-bold;
+    line-height: 0.9;
+
+    @include breakpoint('max', 'xl') {
+      font-size: 6.5rem;
+    }
+
+    @include breakpoint('max', 'md') {
+      font-size: 5rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      font-size: 3.8rem;
+    }
+  }
+}
