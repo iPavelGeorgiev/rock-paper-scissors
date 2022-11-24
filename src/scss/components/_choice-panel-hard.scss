@@ -1,0 +1,138 @@
+@use './buttons' as btn;
+@use '../abstracts/colors';
+@use '../abstracts/breakpoints' as *;
+
+.choice-panel-hard {
+  height: 37.3rem;
+  width: 38.9rem;
+  background: url('../img/bg-pentagon.svg') no-repeat center / contain;
+  position: relative;
+  margin-bottom: 0.6rem;
+
+  @include breakpoint('max', 'xl') {
+    height: 31.3rem;
+    width: 32.9rem;
+  }
+
+  @include breakpoint('max', 'md') {
+    height: 25.3rem;
+    width: 26.9rem;
+  }
+
+  @include breakpoint('max', 'sm') {
+    height: 21.3rem;
+    width: 22.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  & .btn-choice {
+    @extend %btn-scale;
+    @extend %btn-outline;
+    @include btn.create-choice-btn(16rem);
+  }
+
+  & .spock {
+    position: absolute;
+    top: 7rem;
+    left: -8.3rem;
+
+    @include breakpoint('max', 'xl') {
+      top: 5.6rem;
+      left: -7.4rem;
+    }
+
+    @include breakpoint('max', 'md') {
+      top: 4.5rem;
+      left: -5.7rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      top: 3.7rem;
+      left: -4.7rem;
+    }
+  }
+
+  & .scissors {
+    position: absolute;
+    top: -8.1rem;
+    left: 11.5rem;
+
+    @include breakpoint('max', 'xl') {
+      top: -7.4rem;
+      left: 9.2rem;
+    }
+
+    @include breakpoint('max', 'md') {
+      top: -5.8rem;
+      left: 7.7rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      top: -4.9rem;
+      left: 6.6rem;
+    }
+  }
+
+  & .paper {
+    position: absolute;
+    top: 7rem;
+    right: -8.3rem;
+
+    @include breakpoint('max', 'xl') {
+      top: 5.6rem;
+      right: -7.4rem;
+    }
+
+    @include breakpoint('max', 'md') {
+      top: 4.5rem;
+      right: -5.7rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      top: 3.7rem;
+      right: -4.7rem;
+    }
+  }
+
+  & .rock {
+    position: absolute;
+    bottom: -7.9rem;
+    right: -0.7rem;
+
+    @include breakpoint('max', 'xl') {
+      bottom: -7.2rem;
+      right: -0.9rem;
+    }
+
+    @include breakpoint('max', 'md') {
+      bottom: -5.7rem;
+      right: -0.5rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      bottom: -4.9rem;
+      right: -0.4rem;
+    }
+  }
+
+  & .lizard {
+    position: absolute;
+    bottom: -7.9rem;
+    left: -0.7rem;
+
+    @include breakpoint('max', 'xl') {
+      bottom: -7.2rem;
+      left: -0.9rem;
+    }
+
+    @include breakpoint('max', 'md') {
+      bottom: -5.7rem;
+      left: -0.5rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      bottom: -4.9rem;
+      left: -0.4rem;
+    }
+  }
+}

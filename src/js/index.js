@@ -13,7 +13,7 @@ const mainSel = document.querySelector('#main');
   animateCSS('.score-total', 'zoomIn');
 
   const logo = createLogo(difficulty);
-   const choicePanel = createChoicePanel(difficulty);
+  const choicePanel = createChoicePanel(difficulty);
 
   scoreboardSel.prepend(logo);
   mainSel.append(choicePanel);
