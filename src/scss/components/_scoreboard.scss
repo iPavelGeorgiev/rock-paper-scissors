@@ -16,7 +16,11 @@
     border-radius: 1rem;
   }
 
-  & .logo-easy {
+  & h1 {
+    line-height: 0;
+  }
+
+  & .logo-img-easy {
     height: 10.5rem;
     width: 17.2rem;
 
@@ -36,7 +40,7 @@
     }
   }
 
-  & .logo-hard {
+  & .logo-img-hard {
     height: 12.2rem;
     width: 12.3rem;
 

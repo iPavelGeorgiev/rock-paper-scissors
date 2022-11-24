@@ -1,4 +1,4 @@
-import {createLogoImg} from './ui.js';
+import {createLogo} from './ui.js';
 import {getDifficulty, getScore, setScore, animateCSS} from './utilities.js';
 
 // Selectors & Variables
@@ -11,7 +11,6 @@ const scoreboard = document.querySelector('.scoreboard');
   setScore(score);
   animateCSS('.score-total', 'zoomIn');
 
-  const logoImg = createLogoImg(difficulty);
-
-  scoreboard.prepend(logoImg);
+  const logo = createLogo(difficulty);
+  scoreboard.prepend(logo);
 })();
