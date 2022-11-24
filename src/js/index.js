@@ -1,8 +1,9 @@
-import {createLogo} from './ui.js';
+import {createLogo, createChoicePanel} from './ui.js';
 import {getDifficulty, getScore, setScore, animateCSS} from './utilities.js';
 
 // Selectors & Variables
-const scoreboard = document.querySelector('.scoreboard');
+const scoreboardSel = document.querySelector('.scoreboard');
+const mainSel = document.querySelector('#main');
 
 // Init
 (function init() {
@@ -12,5 +13,8 @@ const scoreboard = document.querySelector('.scoreboard');
   animateCSS('.score-total', 'zoomIn');
 
   const logo = createLogo(difficulty);
-  scoreboard.prepend(logo);
+   const choicePanel = createChoicePanel(difficulty);
+
+  scoreboardSel.prepend(logo);
+  mainSel.append(choicePanel);
 })();

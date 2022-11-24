@@ -1,0 +1,98 @@
+@use './buttons' as btn;
+@use '../abstracts/colors';
+@use '../abstracts/breakpoints' as *;
+
+.choice-panel-easy {
+  height: 32.8rem;
+  width: 36.3rem;
+  background: url('../img/bg-triangle.svg') no-repeat center / contain;
+  position: relative;
+  margin-bottom: -5.2rem;
+
+  @include breakpoint('max', 'xl') {
+    height: 27.8rem;
+    width: 31.3rem;
+    margin-bottom: -4.2rem;
+  }
+
+  @include breakpoint('max', 'md') {
+    height: 22.8rem;
+    width: 26.3rem;
+    margin-bottom: -4rem;
+  }
+
+  @include breakpoint('max', 'sm') {
+    height: 17.8rem;
+    width: 21.3rem;
+    margin-bottom: -3.1rem;
+  }
+
+  & .btn-choice {
+    @extend %btn-scale;
+    @extend %btn-outline;
+    @include btn.create-choice-btn(18rem);
+  }
+
+  & .paper {
+    position: absolute;
+    top: -8.9rem;
+    left: -7.2rem;
+
+    @include breakpoint('max', 'xl') {
+      top: -8.3rem;
+      left: -6.4rem;
+    }
+
+    @include breakpoint('max', 'md') {
+      top: -6.5rem;
+      left: -4.7rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      top: -5.6rem;
+      left: -3.5rem;
+    }
+  }
+
+  & .scissors {
+    position: absolute;
+    top: -8.9rem;
+    right: -7.2rem;
+
+    @include breakpoint('max', 'xl') {
+      top: -8.3rem;
+      right: -6.4rem;
+    }
+
+    @include breakpoint('max', 'md') {
+      top: -6.5rem;
+      right: -4.7rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      top: -5.6rem;
+      right: -3.5rem;
+    }
+  }
+
+  & .rock {
+    position: absolute;
+    bottom: -3rem;
+    right: 9.2rem;
+
+    @include breakpoint('max', 'xl') {
+      bottom: -3.2rem;
+      right: 7.5rem;
+    }
+
+    @include breakpoint('max', 'md') {
+      bottom: -1.9rem;
+      right: 6.8rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      bottom: -2rem;
+      right: 5.2rem;
+    }
+  }
+}
