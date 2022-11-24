@@ -2,16 +2,8 @@
 @use '../abstracts/variables' as vars;
 @use '../abstracts/breakpoints' as *;
 
-html {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(colors.$radial-gradient);
-  color: colors.$white;
-  height: 100vh;
+:root {
   font-size: vars.$font-size-root;
-  overflow-x: hidden;
 }
 
 body {
@@ -19,29 +11,29 @@ body {
   font-weight: vars.$font-weight-normal;
   font-size: vars.$font-size-base-desktop;
   line-height: vars.$line-height-base;
+  background: radial-gradient(colors.$radial-gradient);
+  color: colors.$white;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  max-height: 90rem;
   width: 100%;
   padding-top: 4.2rem;
   padding-bottom: 2.2rem;
+  overflow-x: hidden;
 
   @include breakpoint('max', 'xl') {
-    max-height: 80rem;
     padding-top: 4.2rem;
     padding-bottom: 2.2rem;
   }
 
   @include breakpoint('max', 'md') {
-    max-height: 75rem;
     padding-top: 3.8rem;
     padding-bottom: 2.2rem;
   }
 
   @include breakpoint('max', 'sm') {
-    max-height: 70rem;
     padding-top: 0.5rem;
   }
 }
@@ -58,6 +50,13 @@ footer {
   @include breakpoint('max', 'md') {
     max-width: 54rem;
   }
+}
+
+main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
