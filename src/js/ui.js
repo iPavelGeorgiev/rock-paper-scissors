@@ -144,4 +144,4 @@ rulesModalSel.addEventListener('click', closeModalOverlay);
 document.addEventListener('keydown', closeModalKeydown);
 
 // Exports
-export {createLogo, createChoicePanel, updateModalContent, createResultPanel};
+export {choices, createLogo, createChoicePanel, updateModalContent, createResultPanel};

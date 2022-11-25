@@ -1,4 +1,4 @@
-import {createLogo, createChoicePanel, updateModalContent, createResultPanel} from './ui.js';
+import {choices, createLogo, createChoicePanel, updateModalContent, createResultPanel} from './ui.js';
 import {getDifficulty, getScore, setScore, animateCSS} from './utilities.js';
 
 // Selectors & Variables
@@ -8,6 +8,13 @@ const difficultySwitchSel = document.querySelector('.difficulty-switch');
 const choicePanelSel = () => document.querySelector('#choice-panel');
 
 // Functions
+const getHouseChoice = () => {
+  const difficulty = getDifficulty();
+  const randomInt = Math.floor(Math.random() * choices[difficulty].length);
+
+  return choices[difficulty][randomInt];
+};
+
 const switchDifficulty = (e) => {
   if (e.target.tagName !== 'INPUT') return;
 
