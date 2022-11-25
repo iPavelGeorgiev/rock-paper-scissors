@@ -1,0 +1,166 @@
+@use './buttons' as btn;
+@use '../abstracts/colors';
+@use '../abstracts/variables' as vars;
+@use '../abstracts/breakpoints' as *;
+
+.result-panel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  transition: all 1s cubic-bezier(0.28, 0.47, 0.47, 0.79);;
+  margin-top: -7.2rem;
+
+  @include breakpoint('max', 'xl') {
+    gap: 4rem;
+  }
+
+  @include breakpoint('max', 'md') {
+    gap: 3.5rem;
+  }
+
+  &-winner {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.1, 0.44, 0.47, 0.79);
+
+    @include breakpoint('max', 'md') {
+      top: 140%;
+    }
+  }
+
+  &-winner-title {
+    font-size: 5rem;
+    font-weight: vars.$font-weight-bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+
+    @include breakpoint('max', 'xl') {
+      font-size: 4.5rem;
+    }
+
+    @include breakpoint('max', 'sm') {
+      font-size: 4rem;
+    }
+  }
+}
+
+.reveal {
+  gap: 28rem;
+
+  @include breakpoint('max', 'xl') {
+    gap: 26rem;
+  }
+
+  @include breakpoint('max', 'md') {
+    gap: 3.5rem;
+  }
+
+  .result-panel-winner {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+.player-pick-container,
+.house-pick-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.player-pick {
+  @include btn.create-choice-btn(23rem);
+  grid-area: player-pick;
+  position: relative;
+  cursor: default;
+  transition: none;
+
+  &-title {
+    grid-area: player-pick-title;
+    font-size: 2.3rem;
+    letter-spacing: 0.2rem;
+    font-weight: vars.$font-weight-semibold;
+
+    @include breakpoint('max', 'md') {
+      order: 1;
+    }
+
+    @include breakpoint('max', 'sm') {
+      font-size: 2rem;
+    }
+  }
+}
+
+.house-pick {
+  @include btn.create-choice-btn(23rem);
+  grid-area: house-pick;
+  position: relative;
+  cursor: default;
+  transition: none;
+
+  &-title {
+    grid-area: house-pick-title;
+    font-size: 2.3rem;
+    letter-spacing: 0.2rem;
+    font-weight: vars.$font-weight-semibold;
+
+    @include breakpoint('max', 'md') {
+      order: 1;
+    }
+
+    @include breakpoint('max', 'sm') {
+      font-size: 2rem;
+    }
+  }
+}
+
+.winner::before {
+  content: '';
+  position: absolute;
+  width: 350%;
+  height: 350%;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-image: radial-gradient(
+    hsl(0deg 0% 90%) 40%,
+    hsl(0deg 0% 63%) 40%,
+    hsl(0deg 0% 63%) 55%,
+    hsl(0deg 0% 45%) 55%
+  );
+  opacity: 0.07;
+  z-index: -10;
+}
+
+.placeholder {
+  border: none;
+  height: 17.7rem;
+  width: 17.7rem;
+  background-color: hsl(224, 49%, 15%);
+  margin: 2.65rem;
+
+  @include breakpoint('max', 'xl') {
+    height: 15.7rem;
+    width: 15.7rem;
+    margin: 2.5rem;
+  }
+
+  @include breakpoint('max', 'md') {
+    height: 12.1rem;
+    width: 12.1rem;
+    margin: 2rem;
+  }
+
+  @include breakpoint('max', 'sm') {
+    height: 10.2rem;
+    width: 10.2rem;
+    margin: 1.8rem;
+  }
+}

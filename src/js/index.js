@@ -1,4 +1,4 @@
-import {createLogo, createChoicePanel, updateModalContent} from './ui.js';
+import {createLogo, createChoicePanel, updateModalContent, createResultPanel} from './ui.js';
 import {getDifficulty, getScore, setScore, animateCSS} from './utilities.js';
 
 // Selectors & Variables

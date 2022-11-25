@@ -50,6 +50,72 @@ const createChoicePanel = (difficulty) => {
   return section;
 };
 
+const createResultPanel = (player, house, winner) => {
+  const section = document.createElement('section');
+  section.classList.add('result-panel', 'animate__animated', 'animate__zoomIn');
+  section.setAttribute('id', 'result-panel');
+
+  const divPlayerPickContainer = document.createElement('div');
+  divPlayerPickContainer.classList.add('player-pick-container');
+
+  const h3Player = document.createElement('h3');
+  h3Player.textContent = 'YOU PICKED';
+  h3Player.classList.add('player-pick-title');
+
+  const divPlayerPick = document.createElement('div');
+  divPlayerPick.classList.add('player-pick', player);
+  divPlayerPick.setAttribute('aria-label', `player picked ${player}`);
+
+  const divWinner = document.createElement('div');
+  divWinner.classList.add('result-panel-winner');
+
+  const h2Winner = document.createElement('h2');
+  h2Winner.classList.add('result-panel-winner-title');
+
+  const btnPlayAgain = document.createElement('button');
+  btnPlayAgain.textContent = 'PLAY AGAIN';
+  btnPlayAgain.classList.add('btn-play-again');
+
+  const divHousePickContainer = document.createElement('div');
+  divHousePickContainer.classList.add('house-pick-container');
+
+  const h3House = document.createElement('h3');
+  h3House.textContent = 'HOUSE PICKED';
+  h3House.classList.add('house-pick-title');
+
+  const divHousePick = document.createElement('div');
+  divHousePick.classList.add('house-pick', 'placeholder');
+
+  // Show House Pick
+  setTimeout(() => {
+    divHousePick.classList.remove('placeholder');
+    divHousePick.classList.add(house);
+    divHousePick.setAttribute('aria-label', `house picked ${house}`);
+  }, 1500);
+
+  // Reveal Winner
+  setTimeout(() => {
+    section.classList.add('reveal');
+
+    if (winner === player) {
+      h2Winner.textContent = 'YOU WIN';
+      divPlayerPick.classList.add('winner');
+    } else if (winner === house) {
+      h2Winner.textContent = 'YOU LOSE';
+      divHousePick.classList.add('winner');
+    } else {
+      h2Winner.textContent = 'DRAW';
+    }
+  }, 2000);
+
+  divPlayerPickContainer.append(h3Player, divPlayerPick);
+  divHousePickContainer.append(h3House, divHousePick);
+  divWinner.append(h2Winner, btnPlayAgain);
+  section.append(divPlayerPickContainer, divHousePickContainer, divWinner);
+
+  return section;
+};
+
 const toggleModal = () => {
   rulesModalSel.classList.toggle('hidden');
 };
@@ -78,4 +144,4 @@ rulesModalSel.addEventListener('click', closeModalOverlay);
 document.addEventListener('keydown', closeModalKeydown);
 
 // Exports
-export {createLogo, createChoicePanel, updateModalContent};
+export {createLogo, createChoicePanel, updateModalContent, createResultPanel};
