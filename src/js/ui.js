@@ -1,4 +1,9 @@
 // Selectors & Variables
+const rulesModalSel = document.querySelector('.rules-modal');
+const rulesModalContentSel = document.querySelector('.rules-modal-content');
+const btnCloseModalSel = document.querySelector('.btn-close-modal');
+const btnShowModalSel = document.querySelector('.btn-show-modal');
+
 const choices = {
   easy: ['paper', 'scissors', 'rock'],
   hard: ['spock', 'scissors', 'paper', 'rock', 'lizard'],
@@ -45,5 +50,32 @@ const createChoicePanel = (difficulty) => {
   return section;
 };
 
+const toggleModal = () => {
+  rulesModalSel.classList.toggle('hidden');
+};
+
+const closeModalKeydown = (e) => {
+  if (e.key === 'Escape' && !rulesModalSel.classList.contains('hidden')) {
+    rulesModalSel.classList.add('hidden');
+  }
+};
+
+const closeModalOverlay = (e) => {
+  if (!e.target.classList.contains('rules-modal')) return;
+
+  rulesModalSel.classList.add('hidden');
+};
+
+const updateModalContent = (difficulty) => {
+  rulesModalContentSel.classList.remove('easy', 'hard');
+  rulesModalContentSel.classList.add(difficulty);
+};
+
+// Event Listeners
+btnShowModalSel.addEventListener('click', toggleModal);
+btnCloseModalSel.addEventListener('click', toggleModal);
+rulesModalSel.addEventListener('click', closeModalOverlay);
+document.addEventListener('keydown', closeModalKeydown);
+
 // Exports
-export {createLogo, createChoicePanel};
+export {createLogo, createChoicePanel, updateModalContent};

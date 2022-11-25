@@ -3,4 +3,6 @@
 @use './base/shared';
 @use './components/scoreboard';
 @use './components/buttons';
-@use './components/choice-panel-easy.scss';
+@use './components/choice-panel-easy';
+@use './components/choice-panel-hard';
+@use './components/rules-modal';

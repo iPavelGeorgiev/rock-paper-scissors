@@ -1,4 +1,4 @@
-import {createLogo, createChoicePanel} from './ui.js';
+import {createLogo, createChoicePanel, updateModalContent} from './ui.js';
 import {getDifficulty, getScore, setScore, animateCSS} from './utilities.js';
 
 // Selectors & Variables
@@ -15,6 +15,7 @@ const mainSel = document.querySelector('#main');
   const logo = createLogo(difficulty);
   const choicePanel = createChoicePanel(difficulty);
 
+  updateModalContent(difficulty);
   scoreboardSel.prepend(logo);
   mainSel.append(choicePanel);
 })();

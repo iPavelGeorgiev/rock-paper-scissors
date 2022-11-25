@@ -1,0 +1,91 @@
+@use '../abstracts/colors';
+@use '../abstracts/variables' as vars;
+@use '../abstracts/breakpoints' as *;
+
+.rules-modal {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(0.5rem);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint('max', 'sm') {
+    background-color: colors.$white;
+    backdrop-filter: none;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2.2rem 3rem;
+    border-radius: 0.8rem;
+    background-color: colors.$white;
+    background-repeat: no-repeat;
+    background-size: 80%;
+
+    @include breakpoint('max', 'sm') {
+      padding: 0;
+    }
+  }
+
+  &-content.easy {
+    height: 51.5rem;
+    width: 50rem;
+    background-position: center 80%;
+    background-image: url('../img/image-rules-easy.svg');
+
+    @include breakpoint('max', 'xl') {
+      height: 41.5rem;
+      width: 40rem;
+    }
+  }
+
+  &-content.hard {
+    height: 56rem;
+    width: 50rem;
+    background-position: center 70%;
+    background-image: url('../img/image-rules-hard.svg');
+
+    @include breakpoint('max', 'xl') {
+      height: 46rem;
+      width: 40rem;
+    }
+  }
+
+  &-content.easy,
+  &-content.hard {
+    @include breakpoint('max', 'sm') {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      background-position: center;
+      padding: 20%;
+    }
+  }
+
+  &-group {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint('max', 'sm') {
+      justify-content: center;
+    }
+  }
+
+  &-title {
+    font-size: 4rem;
+    font-weight: vars.$font-weight-bold;
+    color: colors.$dark-text;
+
+    @include breakpoint('max', 'xl') {
+      font-size: 3.2rem;
+    }
+  }
+}
