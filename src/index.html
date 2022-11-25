@@ -34,6 +34,18 @@
     </div>
   </aside>
   <footer>
+    <fieldset class="difficulty-switch">
+      <legend class="visually-hidden">Switch game difficulty</legend>
+      <div class="difficulty-switch-item">
+        <input class="difficulty-switch-input visually-hidden" type="radio" name="difficulty" id="difficulty-easy" value="easy" checked>
+        <label class="difficulty-switch-label" for="difficulty-easy">EASY</label>
+      </div>
+      <div class="difficulty-switch-item">
+        <input class="difficulty-switch-input visually-hidden" type="radio" name="difficulty" id="difficulty-hard" value="hard">
+        <label class="difficulty-switch-label" for="difficulty-hard">HARD</label>
+        <div aria-hidden="true" class="difficulty-switch-marker"></div>
+      </div>
+    </fieldset>
     <button class="btn-show-modal"><span>RULES</span></button>
   </footer>
 </body>

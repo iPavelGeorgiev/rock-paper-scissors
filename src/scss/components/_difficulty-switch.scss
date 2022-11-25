@@ -1,0 +1,95 @@
+@use '../abstracts/colors';
+@use '../abstracts/variables' as vars;
+@use '../abstracts/breakpoints' as *;
+
+.difficulty-switch {
+  display: inline-flex;
+  padding: 0.3rem;
+  border-radius: 0.8rem;
+  border: 0.2rem solid colors.$main-outline;
+}
+
+.difficulty-switch:has(:focus-visible) {
+  outline: 0.1rem solid colors.$main-outline;
+  outline-offset: 0.3rem;
+}
+
+.difficulty-switch-item {
+  position: relative;
+  height: 3.4rem;
+  width: 9.2rem;
+
+  @include breakpoint('max', 'xl') {
+    height: 3.2rem;
+    width: 8.2rem;
+  }
+
+  @include breakpoint('max', 'md') {
+    height: 3rem;
+    width: 7.2rem;
+  }
+
+  @include breakpoint('max', 'sm') {
+    height: 2.8rem;
+    width: 6.2rem;
+  }
+}
+
+.difficulty-switch-label {
+  position: relative;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-weight: vars.$font-weight-semibold;
+  letter-spacing: 0.2rem;
+  margin-left: 0.3rem;
+  transition: all 0.3s;
+  z-index: 2;
+  font-size: 1.7rem;
+
+  @include breakpoint('max', 'xl') {
+    font-size: 1.6rem;
+  }
+
+  @include breakpoint('max', 'md') {
+    font-size: 1.5rem;
+  }
+
+  @include breakpoint('max', 'sm') {
+    font-size: 1.3rem;
+  }
+}
+
+.difficulty-switch-marker {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  border-radius: 0.6rem;
+  background-color: colors.$main-outline;
+  height: 3.4rem;
+  width: 9.2rem;
+  transition: 0.3s;
+  z-index: 1;
+
+  @include breakpoint('max', 'xl') {
+    height: 3.2rem;
+    width: 8.2rem;
+  }
+
+  @include breakpoint('max', 'md') {
+    height: 3rem;
+    width: 7.2rem;
+  }
+
+  @include breakpoint('max', 'sm') {
+    height: 2.8rem;
+    width: 6.2rem;
+  }
+}
+
+.difficulty-switch-input:checked ~ .difficulty-switch-marker {
+  transform: translateX(100%);
+}
