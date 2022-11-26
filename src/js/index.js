@@ -5,6 +5,7 @@ import {getDifficulty, getScore, setScore, animateCSS} from './utilities.js';
 const scoreboardSel = document.querySelector('.scoreboard');
 const mainSel = document.querySelector('#main');
 const difficultySwitchSel = document.querySelector('.difficulty-switch');
+const btnResetScoreSel = document.querySelector('.btn-reset-score');
 const choicePanelSel = () => document.querySelector('#choice-panel');
 
 const choiceBeats = {
@@ -28,6 +29,13 @@ const playAgain = (e) => {
 
   e.currentTarget.remove();
   choicePanelSel().classList.remove('hidden');
+};
+
+const resetScore = () => {
+  const difficulty = getDifficulty();
+  localStorage.setItem(`score-${difficulty}`, 0);
+  setScore(0);
+  animateCSS('.score-total', 'zoomIn');
 };
 
 const playRound = (e) => {
@@ -56,7 +64,7 @@ const playRound = (e) => {
     localStorage.setItem(`score-${difficulty}`, newScore);
     setScore(newScore);
   }, 2000);
-  
+
   resultPanel.addEventListener('click', playAgain);
   mainSel.append(resultPanel);
 };
@@ -83,6 +91,7 @@ const switchDifficulty = (e) => {
 
 // Event Listeners
 difficultySwitchSel.addEventListener('click', switchDifficulty);
+btnResetScoreSel.addEventListener('click', resetScore);
 
 // Init
 (function init() {

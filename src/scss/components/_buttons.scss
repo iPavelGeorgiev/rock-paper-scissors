@@ -147,6 +147,7 @@
   @extend %btn;
   @extend %btn-scale;
   margin-right: auto;
+  line-height: 0;
 
   & img {
     height: 2.9rem;
