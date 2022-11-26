@@ -23,6 +23,13 @@ const getHouseChoice = () => {
   return choices[difficulty][randomInt];
 };
 
+const playAgain = (e) => {
+  if (e.target.tagName !== 'BUTTON') return;
+
+  e.currentTarget.remove();
+  choicePanelSel().classList.remove('hidden');
+};
+
 const playRound = (e) => {
   if (e.target.tagName !== 'BUTTON') return;
 
@@ -49,7 +56,8 @@ const playRound = (e) => {
     localStorage.setItem(`score-${difficulty}`, newScore);
     setScore(newScore);
   }, 2000);
-
+  
+  resultPanel.addEventListener('click', playAgain);
   mainSel.append(resultPanel);
 };
 
