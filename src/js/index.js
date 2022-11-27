@@ -1,5 +1,6 @@
 import {choices, createLogo, createChoicePanel, updateModalContent, createResultPanel} from './ui.js';
 import {getDifficulty, getScore, setScore, animateCSS} from './utilities.js';
+import sounds from './sounds.js';
 
 // Selectors & Variables
 const scoreboardSel = document.querySelector('.scoreboard');
@@ -27,12 +28,15 @@ const getHouseChoice = () => {
 const playAgain = (e) => {
   if (e.target.tagName !== 'BUTTON') return;
 
+  sounds.click.play();
   e.currentTarget.remove();
   choicePanelSel().classList.remove('hidden');
 };
 
 const resetScore = () => {
+  sounds.click.play();
   const difficulty = getDifficulty();
+
   localStorage.setItem(`score-${difficulty}`, 0);
   setScore(0);
   animateCSS('.score-total', 'zoomIn');
@@ -41,6 +45,7 @@ const resetScore = () => {
 const playRound = (e) => {
   if (e.target.tagName !== 'BUTTON') return;
 
+  sounds.choice.play();
   const difficulty = getDifficulty();
   const score = getScore(difficulty);
   const playerChoice = e.target.dataset.choice;
@@ -72,6 +77,7 @@ const playRound = (e) => {
 const switchDifficulty = (e) => {
   if (e.target.tagName !== 'INPUT') return;
 
+  sounds.click.play();
   const difficulty = document.querySelector('.difficulty-switch-input:checked').value;
   localStorage.setItem('difficulty', difficulty);
 

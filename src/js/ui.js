@@ -1,3 +1,5 @@
+import sounds from './sounds.js';
+
 // Selectors & Variables
 const rulesModalSel = document.querySelector('.rules-modal');
 const rulesModalContentSel = document.querySelector('.rules-modal-content');
@@ -98,12 +100,15 @@ const createResultPanel = (player, house, winner) => {
     section.classList.add('reveal');
 
     if (winner === player) {
+      sounds.win.play();
       h2Winner.textContent = 'YOU WIN';
       divPlayerPick.classList.add('winner');
     } else if (winner === house) {
+      sounds.lose.play();
       h2Winner.textContent = 'YOU LOSE';
       divHousePick.classList.add('winner');
     } else {
+      sounds.draw.play();
       h2Winner.textContent = 'DRAW';
     }
   }, 2000);
@@ -117,6 +122,7 @@ const createResultPanel = (player, house, winner) => {
 };
 
 const toggleModal = () => {
+  sounds.click.play();
   rulesModalSel.classList.toggle('hidden');
 };
 
