@@ -1,0 +1,19 @@
+@use '../abstracts/breakpoints' as *;
+
+.sound-toggles {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  @include breakpoint('max', 'sm') {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+.sound-active img {
+  opacity: 100%;
+}

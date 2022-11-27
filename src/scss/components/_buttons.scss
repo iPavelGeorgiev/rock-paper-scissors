@@ -189,3 +189,42 @@
     }
   }
 }
+
+.btn-music-toggle,
+.btn-volume-toggle {
+  @extend %btn;
+  @extend %btn-scale;
+  line-height: 0;
+}
+
+.btn-music-toggle img {
+  height: 2.7rem;
+  width: 2.7rem;
+  opacity: 50%;
+
+  @include breakpoint('max', 'md') {
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+
+  @include breakpoint('max', 'sm') {
+    height: 2.1rem;
+    width: 2.1rem;
+  }
+}
+
+.btn-volume-toggle img {
+  height: 2.7rem;
+  width: 3rem;
+  opacity: 50%;
+
+  @include breakpoint('max', 'md') {
+    height: 2.4rem;
+    width: 2.7rem;
+  }
+
+  @include breakpoint('max', 'sm') {
+    height: 2.2rem;
+    width: 2.5rem;
+  }
+}
