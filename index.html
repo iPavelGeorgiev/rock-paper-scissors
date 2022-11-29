@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This is my solution to the rock, paper, scissors game challenge on Frontend Mentor">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="./css/main.css" defer>
+  <script src="./js/utilities.js" type="module" defer></script>
+  <script src="./js/sounds.js" type="module" defer></script>
+  <script src="./js/ui.js" type="module" defer></script>
+  <script src="./js/index.js" type="module" defer></script>
+  <title>Rock, Paper, Scissors Game</title>
+</head>
+<body>
+  <header>
+    <section class="scoreboard">
+      <div class="score">
+        <h2 class="score-title">SCORE</h2>
+        <p class="score-total">0</p>
+      </div>
+    </section>
+    <section class="sound-toggles">
+      <h2 class="visually-hidden">Toggle sounds</h2>
+      <button class="btn-music-toggle">
+        <img src="./img/music-solid.svg" alt="toggle music">
+      </button>
+      <button class="btn-volume-toggle sound-active">
+        <img src="./img/volume-high-solid.svg" alt="toggle volume">
+      </button>
+    </section>
+  </header>
+  <main id="main"></main>
+  <aside class="rules-modal hidden">
+    <div class="rules-modal-content animate__animated animate__zoomIn">
+      <h2 class="rules-modal-title">RULES</h2>
+      <button class="btn-close-modal">
+        <img src="./img/icon-close.svg" alt="close modal icon">
+      </button>
+    </div>
+  </aside>
+  <footer>
+    <fieldset class="difficulty-switch">
+      <legend class="visually-hidden">Switch game difficulty</legend>
+      <div class="difficulty-switch-item">
+        <input class="difficulty-switch-input visually-hidden" type="radio" name="difficulty" id="difficulty-easy" value="easy" checked>
+        <label class="difficulty-switch-label" for="difficulty-easy">EASY</label>
+      </div>
+      <div class="difficulty-switch-item">
+        <input class="difficulty-switch-input visually-hidden" type="radio" name="difficulty" id="difficulty-hard" value="hard">
+        <label class="difficulty-switch-label" for="difficulty-hard">HARD</label>
+        <div aria-hidden="true" class="difficulty-switch-marker"></div>
+      </div>
+    </fieldset>
+    <button class="btn-reset-score" aria-label="reset score">
+      <img src="./img/rotate-right.svg" alt="">
+    </button>
+    <button class="btn-show-modal"><span>RULES</span></button>
+  </footer>
+</body>
+</html>
