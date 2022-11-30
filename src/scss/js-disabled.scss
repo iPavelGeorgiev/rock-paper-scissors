@@ -1,0 +1,33 @@
+@use './abstracts/breakpoints' as *;
+
+header,
+main,
+aside,
+footer {
+  display: none;
+}
+
+.js-disabled {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 90%;
+
+  &-heading {
+    font-size: 5rem;
+
+    @include breakpoint('max', 'md') {
+      font-size: 3.2rem;
+    }
+  }
+
+  &-subheading {
+    font-size: 2rem;
+
+    @include breakpoint('max', 'md') {
+      font-size: 1.3rem;
+    }
+  }
+}
