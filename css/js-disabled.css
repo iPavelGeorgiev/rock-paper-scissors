@@ -1,0 +1,1 @@
+aside,footer,header,main{display:none}.js-disabled{left:50%;position:absolute;text-align:center;top:50%;transform:translate(-50%,-50%);width:90%}.js-disabled-heading{font-size:5rem}@media (max-width:719px){.js-disabled-heading{font-size:3.2rem}}.js-disabled-subheading{font-size:2rem}@media (max-width:719px){.js-disabled-subheading{font-size:1.3rem}}
