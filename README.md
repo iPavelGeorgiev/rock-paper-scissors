@@ -4,7 +4,12 @@
 
 ## Overview
 
-A Rock, Paper, Scissors game played against the computer. Players can switch between two difficulty modes, easy and hard. Easy mode is the classic RPS game, and hard mode is an expanded geek version called Rock, Paper, Scissors, Lizard, Spock created by [Sam Kass and Karen Bryla](https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock).
+This Rock, Paper, Scissors game allows players to play against the computer. There are two difficulty modes available:
+
+- Easy mode, which is the traditional Rock, Paper, Scissors game.
+- Hard mode, which is an expanded version called Rock, Paper, Scissors, Lizard, Spock that was created by [Sam Kass and Karen Bryla](https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock).
+
+The game also includes music and sound effects to enhance the gameplay experience. The score and selected difficulty are saved as localStorage values, allowing players to retain their progress and preferred difficulty even if they close the app and come back to it later.
 
 ### Rules
 
@@ -17,38 +22,44 @@ If the player wins, they gain 1 point. If the computer wins, the player loses on
 <details>
   <summary>Desktop design: easy mode</summary>
 
-  ![Mockup of desktop easy mode view](design/desktop-preview-easy.jpg)
+![Mockup of desktop easy mode view](design/desktop-preview-easy.jpg)
+
 </details>
 
 <details>
   <summary>Desktop design: hard mode</summary>
 
-  ![Mockup of desktop hard mode view](design/desktop-preview-hard.jpg)
+![Mockup of desktop hard mode view](design/desktop-preview-hard.jpg)
+
 </details>
 
 <details>
   <summary>Desktop design: rules modal</summary>
 
-  ![Mockup of desktop rules modal view](design/desktop-modal-preview.jpg)
+![Mockup of desktop rules modal view](design/desktop-modal-preview.jpg)
+
 </details>
 &nbsp;
 
 <details>
   <summary>Mobile design: easy mode</summary>
 
-  ![Mockup of mobile easy mode view](design/mobile-preview-easy.jpg)
+![Mockup of mobile easy mode view](design/mobile-preview-easy.jpg)
+
 </details>
 
 <details>
   <summary>Mobile design: hard mode</summary>
 
-  ![Mockup of mobile hard mode view](design/mobile-preview-hard.jpg)
+![Mockup of mobile hard mode view](design/mobile-preview-hard.jpg)
+
 </details>
 
 <details>
   <summary>Mobile design: rules modal</summary>
 
-  ![Mockup of mobile rules modal view](design/mobile-modal-preview.jpg)
+![Mockup of mobile rules modal view](design/mobile-modal-preview.jpg)
+
 </details>
 
 ### Built with
@@ -57,12 +68,6 @@ If the player wins, they gain 1 point. If the computer wins, the player loses on
 - SCSS
 - JavaScript
 - Animate.css
-
-### Links
-
-- [Live Site URL](https://ipavelgeorgiev.github.io/rock-paper-scissors)
-- [Solution URL](https://www.frontendmentor.io/solutions/rock-paper-scissors-game-bPQFtnOCtt)
-
 
 ## Run locally
 
@@ -90,29 +95,12 @@ Start the server
   npm run start
 ```
 
-## Credits
+## Acknowledgements
 
-This challenge is provided by [Frontend Mentor](https://www.frontendmentor.io). Frontend Mentor is a platform where developers can learn and improve their frontend development skills alongside other developers by implementing solutions to challenges. Each challenge includes designs (both mobile and desktop), assets, and a style guide to get you started. The rest is up to you!
-
-### The challenge
-The challenge is to build out this [Rock, Paper, Scissors game](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH) and get it looking as close to the design as possible.
-
-Users should be able to:
-
-- View the optimal layout for the game depending on their device's screen size
-- Play Rock, Paper, Scissors against the computer
-- Maintain the state of the score after refreshing the browser
-- **Bonus**: Play Rock, Paper, Scissors, Lizard, Spock against the computer _(optional)_
-
-Additional features added by me:
-- Switch between the two difficulty modes (easy / hard)
-- Reset the score of the currently active difficulty mode
-- Music and volume toggles
-- Animation of various elements
-
-I don't have access to the premium Figma/Sketch files, so the design is not pixel perfect.
+This [challenge](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH) was provided by [Frontend Mentor](https://www.frontendmentor.io), a platform that offers challenges to help developers practice and improve their front-end skills. Each challenge includes designs for both mobile and desktop, as well as assets and a style guide, to get you started. This provides an opportunity for developers to concentrate on the implementation without having to worry about the design.
 
 ## Author
 
-- Frontend Mentor - [@iPavelGeorgiev](https://www.frontendmentor.io/profile/iPavelGeorgiev)
-- LinkedIn - [@iPavelGeorgiev](https://www.linkedin.com/in/ipavelgeorgiev)
+<p><a href="https://www.linkedin.com/in/ipavelgeorgiev/"><img align="center" src="https://i.ibb.co/6Jw1g19/linkedin-icon.png" alt="LinkedIn" height="auto" width="30"/></a>&nbsp;
+<a href="https://discord.com/users/621026020895621123"><img align="center" src="https://i.ibb.co/80bsWC9/discord-icon.png" alt="Discord" height="auto" width="30"/></a>&nbsp;
+<a href="https://www.frontendmentor.io/profile/iPavelGeorgiev"><img align="center" src="https://i.ibb.co/jZK7zYH/frontend-mentor-icon.png" alt="Frontend Mentor" height="auto" width="30"/></a></p>
